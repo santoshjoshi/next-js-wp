@@ -22,12 +22,16 @@ export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { status } = useSession();
 
+  //if (loading) return <p>Loading...</p>;
+  //if (error) return <p>Error! {error.message}</p>;
+  
   const menuItems = [
     {
       label: "Home",
       href: "/",
     },
   ];
+
 
   if (status === "authenticated") {
     menuItems.push(
@@ -42,7 +46,10 @@ export default function AppNavbar() {
     );
   }
 
+
   return (
+    <>
+  
     <Navbar onMenuOpenChange={setIsMenuOpen} className="mx-auto"  maxWidth="full">
       <NavbarContent>
         <NavbarMenuToggle
@@ -86,5 +93,6 @@ export default function AppNavbar() {
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
+    </>
   );
 }

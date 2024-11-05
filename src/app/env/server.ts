@@ -18,6 +18,7 @@ export const env = createEnv({
     .refine((s) => s === "true" || s === "false")
     .transform((s) => s === "true")
     .optional(),
+    NEXT_PUBLIC_WORDPRESS_API_URL: z.string().url()
   },
   onValidationError: (error: ZodError) => {
     console.error(
@@ -26,9 +27,9 @@ export const env = createEnv({
     );
     throw new Error("Invalid environment variables");
   },
-  onInvalidAccess: () => {
+  onInvalidAccess(variable) {
     throw new Error(
-      "❌ Attempted to access a server-side environment variable on the client"
+      `❌ Attempted to access a server-side environment variable on the client ${ variable}`
     );
   },
   emptyStringAsUndefined: false,

@@ -18,6 +18,7 @@ export default  async function GuestBook() {
     }); 
     
     return (
+      <>
       <Card className="mx-auto mt-4 max-w-lg">
         <CardBody>
             <h1 className="text-5xl text-center">Welcome to  GuestBook</h1>
@@ -56,5 +57,6 @@ export default  async function GuestBook() {
         ))}
         </CardBody>
       </Card>
+      </>
     );
   }

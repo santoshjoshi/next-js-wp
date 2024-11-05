@@ -5,7 +5,6 @@ import Provider from "./components/providers";
 import "./globals.css";
 import { Suspense } from "react";
 
- 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +16,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -27,11 +28,10 @@ export default function RootLayout({
       </head>
       <body className="h-screen w-screen">
         <Provider>
-          <AppNavBar/>
+          <AppNavBar />
           <main className="flex-grow bg-[url(/light-bg.svg)]  dark:bg-[url(/dark-bg.svg)] bg-cover bg-repeat">
           <Suspense>{children}</Suspense>
           </main>
-          
         </Provider>
       </body>
     </html>
