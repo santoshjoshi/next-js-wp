@@ -38,3 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
  npx drizzle-kit generate --config=drizzle.config.ts
  npx drizzle-kit migrate --config=drizzle.config.ts
+
+
+Graphql Code gen
+https://wpengine.com/builders/graphql-code-generator-for-wpgraphql/
+
+https://the-guild.dev/graphql/codegen/docs/config-reference/codegen-config

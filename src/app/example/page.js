@@ -1,7 +1,7 @@
 // pages/menu.js
-import Menu from "@/app/example/menu";
+import Menu from "@/wp-lib/graphql-queries/menu";
 
-import {fetchMenuItems} from "@/app/example/fetchMenuItems";
+import {fetchMenuItems} from "@/wp-lib/graphql-queries/fetchMenuItems";
 
 const MenuPage = async () => {
   const menuItems = await fetchMenuItems();  
