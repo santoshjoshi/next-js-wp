@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Suspense } from "react";
 import AppNavBar from "../components/app-navbar";
-import Provider from "../components/providers";
+import Provider from "../components/provider/providers";
 import "./globals.css";
 
 

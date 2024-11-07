@@ -15,8 +15,8 @@ import {
 import { IconPackage } from "@tabler/icons-react";
 import { useSession } from "next-auth/react";
 
-import AuthButton from "./auth-button";
-import { ThemeSwitcher } from "../theme-switcher";
+import AuthButton from "./signin/auth-button";
+import { ThemeSwitcher } from "./theme-switcher/theme-switcher";
 
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
