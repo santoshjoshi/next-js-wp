@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import AppNavBar from "./components/app-navbar";
-import Provider from "./components/providers";
-import "./globals.css";
 import { Suspense } from "react";
+import AppNavBar from "../components/app-navbar";
+import Provider from "../components/providers";
+import "./globals.css";
 
 
 export const metadata: Metadata = {

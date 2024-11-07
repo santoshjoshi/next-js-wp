@@ -1,7 +1,7 @@
 
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
-import  {env} from "@/app/env/server"
+import { env } from "@/env/server";
 const createApolloClient = () => {
 
   console.log("Creating client");
@@ -13,4 +13,3 @@ const createApolloClient = () => {
 };
 
 export default createApolloClient;
- 

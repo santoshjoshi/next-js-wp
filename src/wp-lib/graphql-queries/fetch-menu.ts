@@ -1,6 +1,6 @@
 // graphql/fetchMenuItems.ts
-import createApolloClient from "@/app/apollo-wrapper"; // Adjust the path if necessary
-import { GET_MAIN_MENU_ITEMS } from "@/app/wp-lib/graphql-queries/queries"; // Adjust the path if necessary
+import createApolloClient from "@/apollo-wrapper"; // Adjust the path if necessary
+import { GET_MAIN_MENU_ITEMS } from "@/wp-lib/graphql-queries/queries"; // Adjust the path if necessary
 
 export const fetchMenuItems = async () => {
     console.log("fetchMenuItems called"); // This should log when the function is called

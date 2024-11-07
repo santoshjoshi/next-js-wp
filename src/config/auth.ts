@@ -1,9 +1,9 @@
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
-import { env } from "@/app/env/server";
+import { env } from "@/env/server";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { db } from "../db";
+import { db } from "@/db";
 
 const options: NextAuthOptions = {
   pages: {

@@ -5,7 +5,7 @@ import { parseWithZod } from "@conform-to/zod";
 import { Button, Textarea } from "@nextui-org/react";
 import { useFormState } from "react-dom";
 
-import { guestBookInsertSchema } from "../db/schema/guest-book-entries";
+import { guestBookInsertSchema } from "../../db/schema/guest-book-entries";
 import { createGuestBookEntry } from "./actions";
 
 export default function GuestbookClient() {

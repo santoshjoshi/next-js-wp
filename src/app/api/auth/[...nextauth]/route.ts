@@ -1,4 +1,4 @@
-import options from "@/app/config/auth"
+import options from "@/config/auth"
 import NextAuth from "next-auth"
 
 const handler = NextAuth(options)

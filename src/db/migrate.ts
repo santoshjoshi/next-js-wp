@@ -1,6 +1,6 @@
+import { env } from "@/env/server";
 import { migrate } from "drizzle-orm/mysql2/migrator"; // MySQL migrator
-import { env } from "@/app/env/server";
-import {db, client } from "./index"; // Assumes db is set up for MySQL
+import { client, db } from "./index"; // Assumes db is set up for MySQL
 
 import config from "@/../drizzle.config";
 

@@ -1,8 +1,8 @@
 
-import { Card, CardBody, CardHeader, CardFooter, Avatar} from "@nextui-org/react";
+import requireAuth from "@/utils/require-auth";
+import { Avatar, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { db } from "../../db";
 import GuestbookClient from "./page.client";
-import { db } from "../db";
-import requireAuth from "../utils/require-auth";
 
 export default  async function GuestBook() {
    

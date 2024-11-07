@@ -1,6 +1,6 @@
 import { defineConfig } from "drizzle-kit";
 
-import { env } from "./src/app/env/server";
+import { env } from "./src/env/server";
 
 export default defineConfig({
   dialect: "mysql",

@@ -1,13 +1,13 @@
 "use server";
 
-import { redirect } from "next/navigation";
+import options from "@/config/auth";
 import { parseWithZod } from "@conform-to/zod";
-import guestbookEntries, { guestBookInsertSchema } from "../db/schema/guest-book-entries";
-import { revalidatePath } from "next/cache";
-import { db } from "../db";
-import requireAuth from "../utils/require-auth";
 import { getServerSession } from "next-auth";
-import options from "../config/auth";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { db } from "../../db";
+import guestbookEntries, { guestBookInsertSchema } from "../../db/schema/guest-book-entries";
+import requireAuth from "../../utils/require-auth";
 
 export async function createGuestBookEntry(prevState: unknown, formData: FormData) {
   

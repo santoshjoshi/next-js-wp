@@ -1,6 +1,6 @@
 // lib/fetchMenuItems.js
 import { gql } from "@apollo/client";
-import createApolloClient from "@/app/apollo-wrapper";
+import createApolloClient from "@/apollo-wrapper";
 
 // Define your GraphQL query
 export const GET_MAIN_MENU_ITEMS = gql`
