@@ -44,3 +44,4 @@ Graphql Code gen
 https://wpengine.com/builders/graphql-code-generator-for-wpgraphql/
 
 https://the-guild.dev/graphql/codegen/docs/config-reference/codegen-config
+https://www.apollographql.com/tutorials/lift-off-part1/09-codegen

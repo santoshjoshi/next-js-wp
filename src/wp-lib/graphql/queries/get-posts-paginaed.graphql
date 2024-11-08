@@ -1,0 +1,16 @@
+# src/queries/getPostsPaginated.graphql
+query GetPostsPaginated($first: Int!, $after: String) {
+  posts(first: $first, after: $after) {
+    nodes {
+      id
+      title
+      excerpt
+      content
+      date
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

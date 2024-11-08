@@ -1,0 +1,14 @@
+# src/queries/getPostById.graphql
+query GetPostById($id: ID!) {
+  post(id: $id, idType: DATABASE_ID) {
+    id
+    title
+    content
+    author {
+      node {
+        name
+      }
+    }
+    date
+  }
+}

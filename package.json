@@ -19,6 +19,7 @@
     "@conform-to/react": "^1.2.2",
     "@conform-to/zod": "^1.2.2",
     "@graphql-codegen/cli": "^5.0.3",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.2",
     "@nextui-org/react": "^2.4.8",
     "@t3-oss/env-nextjs": "^0.11.1",
     "@tabler/icons-react": "^3.19.0",

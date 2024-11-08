@@ -1,0 +1,17 @@
+query GetMenu($location: MenuLocationEnum!) {
+  menuItems(where: { location: $location }) {
+    nodes {
+      id
+      label
+      url
+      childItems {
+        nodes {
+          id
+          label
+          url
+        }
+      }
+    }
+  }
+}
+

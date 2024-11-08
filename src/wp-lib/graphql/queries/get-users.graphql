@@ -1,0 +1,13 @@
+# src/queries/getUsers.graphql
+query GetUsers {
+  users {
+    nodes {
+      id
+      name
+      email
+      avatar {
+        url
+      }
+    }
+  }
+}
