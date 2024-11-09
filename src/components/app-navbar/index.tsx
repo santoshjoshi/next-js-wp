@@ -17,40 +17,35 @@ import { useSession } from "next-auth/react";
 
 import AuthButton from "./signin/auth-button";
 import { ThemeSwitcher } from "./theme-switcher/theme-switcher";
+import { GetMenuQuery } from "@/__generated__/graphql";
+import { motion } from "framer-motion";
 
-export default function AppNavbar() {
+export default function AppNavbar({ menuItems } : GetMenuQuery) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { status } = useSession();
 
   //if (loading) return <p>Loading...</p>;
   //if (error) return <p>Error! {error.message}</p>;
   
-  const menuItems = [
-    {
-      label: "Home",
-      href: "/",
-    },
+   
+
+  const completeMenuItems = [
+    ...menuItems,
+    ...(status === "authenticated"
+      ? [
+          { label: "Profile", url: "/profile" },
+          { label: "Guestbook", url: "/guestbook" },
+          { label: "Posts", url: "/example" },
+        ]
+      : []),
   ];
-
-
-  if (status === "authenticated") {
-    menuItems.push(
-      {
-        label: "Profile",
-        href: "/profile",
-      },
-      {
-        label: "Guestbook",
-        href: "/guestbook",
-      }
-    );
-  }
 
 
   return (
     <>
   
     <Navbar onMenuOpenChange={setIsMenuOpen} className="mx-auto"  maxWidth="full">
+      
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -63,11 +58,21 @@ export default function AppNavbar() {
       </NavbarContent>
 
       <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-            <Link className="w-full" href={item.href} size="lg">
-              {item.label}
+        {completeMenuItems.map((item, index) => (
+        
+          <NavbarItem key={`${item.label}-${index}`}>
+            <motion.div
+          key={`${item.label}-${index}`}
+          initial={{ opacity: 0, y: 20 }} // start slightly below and invisible
+          animate={{ opacity: 1, y: 0 }} // animate to fully visible and in position
+          transition={{ delay: index * 0.1, duration: 0.4 }} // stagger items
+          whileHover={{ scale: 1.1 }} // slight scale up on hover
+          >
+            <Link className="w-full" href={item.url} size="lg">
+              <span dangerouslySetInnerHTML={{ __html: item.label }} />
+    
             </Link>
+            </motion.div>
           </NavbarItem>
         ))}
         <NavbarItem>
@@ -77,17 +82,20 @@ export default function AppNavbar() {
           <AuthButton minimal={false} />
         </NavbarItem>
       </NavbarContent>
+      
+      
       <NavbarMenu>
         <NavbarMenuItem>
           <ThemeSwitcher showLabel />
         </NavbarMenuItem>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full" href={item.href} size="lg">
-              {item.label}
+        {completeMenuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.label}-${index}`}>
+            <Link className="w-full" href={item.url} size="lg">
+              <span dangerouslySetInnerHTML={{ __html: item.label }} />
             </Link>
           </NavbarMenuItem>
         ))}
+
         <NavbarMenuItem>
           <AuthButton />
         </NavbarMenuItem>

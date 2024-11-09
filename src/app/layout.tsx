@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 
 import { Suspense } from "react";
-import AppNavBar from "../components/app-navbar";
+import NavbarWrapper from "../components/app-navbar/navbar-wrapper";
 import Provider from "../components/provider/providers";
 import "./globals.css";
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  
+ 
   return (
+ 
     <html lang="en" suppressHydrationWarning>
       <head>
         <link
@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <body className="h-screen w-screen">
         <Provider>
-          <AppNavBar />
+          <NavbarWrapper />
           <main className="flex-grow bg-[url(/light-bg.svg)]  dark:bg-[url(/dark-bg.svg)] bg-cover bg-repeat">
           <Suspense>{children}</Suspense>
           </main>

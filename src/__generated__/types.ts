@@ -10264,7 +10264,7 @@ export type GetPostsPaginatedQueryVariables = Exact<{
 }>;
 
 
-export type GetPostsPaginatedQuery = { __typename?: 'RootQuery', posts?: { __typename?: 'RootQueryToPostConnection', nodes: Array<{ __typename?: 'Post', id: string, title?: string | null, excerpt?: string | null, content?: string | null, date?: string | null }>, pageInfo: { __typename?: 'RootQueryToPostConnectionPageInfo', hasNextPage: boolean, endCursor?: string | null } } | null };
+export type GetPostsPaginatedQuery = { __typename?: 'RootQuery', posts?: { __typename?: 'RootQueryToPostConnection', nodes: Array<{ __typename?: 'Post', id: string, title?: string | null, excerpt?: string | null, date?: string | null, link?: string | null, author?: { __typename?: 'NodeWithAuthorToUserConnectionEdge', node: { __typename?: 'User', name?: string | null, avatar?: { __typename?: 'Avatar', default?: string | null, height?: number | null, size?: number | null, url?: string | null, width?: number | null } | null } } | null, categories?: { __typename?: 'PostToCategoryConnection', nodes: Array<{ __typename?: 'Category', id: string, name?: string | null, slug?: string | null, link?: string | null }> } | null }>, pageInfo: { __typename?: 'RootQueryToPostConnectionPageInfo', hasNextPage: boolean, endCursor?: string | null } } | null };
 
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10378,8 +10378,28 @@ export const GetPostsPaginatedDocument = gql`
       id
       title
       excerpt
-      content
       date
+      link
+      author {
+        node {
+          name
+          avatar {
+            default
+            height
+            size
+            url
+            width
+          }
+        }
+      }
+      categories {
+        nodes {
+          id
+          name
+          slug
+          link
+        }
+      }
     }
     pageInfo {
       hasNextPage

@@ -5,8 +5,28 @@ query GetPostsPaginated($first: Int!, $after: String) {
       id
       title
       excerpt
-      content
       date
+      link
+      author {
+        node {
+          name
+          avatar {
+            default
+            height
+            size
+            url
+            width
+          }
+        }
+      }
+      categories {
+        nodes {
+          id
+          name
+          slug
+          link
+        }
+      }
     }
     pageInfo {
       hasNextPage
