@@ -16,12 +16,12 @@ export default async function MenuPage() {
       <ul>
       {menuItems.map((menuItem) => (
           <li key={menuItem.id}>
-            <a href={menuItem.url}>{menuItem.label}</a>
+            <a href={menuItem.url} title={menuItem.title} dangerouslySetInnerHTML={{ __html: menuItem.label }} />
             {menuItem.childItems?.nodes.length > 0 && (
               <ul>
                 {menuItem.childItems.nodes.map((childItem) => (
                   <li key={childItem.id}>
-                    <a href={childItem.url}>{childItem.label}</a>
+                    <a href={childItem.url} title={childItem.title} dangerouslySetInnerHTML={{ __html: childItem.label }} />
                   </li>
                 ))}
               </ul>
