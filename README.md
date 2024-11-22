@@ -90,6 +90,6 @@ To dive deeper into the technologies used in this project, explore the following
 
 ## Deployment
 
-The recommended deployment platform for this Next.js app is Vercel. Follow the Next.js deployment guide for detailed instructions.
+Will be deploying this project to OCI (Oracle Cloud Infrastructure)
 
 Enjoy building! 🎉
